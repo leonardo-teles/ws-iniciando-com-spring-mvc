@@ -14,6 +14,9 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
 @Entity
 public class Titulo implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -26,8 +29,10 @@ public class Titulo implements Serializable{
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "data_vencimento")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dataVencimento;
 	
+	@NumberFormat(pattern = "#,##0.00")
 	private BigDecimal valor;
 	
 	@Enumerated(EnumType.STRING)
