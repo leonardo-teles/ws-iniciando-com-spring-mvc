@@ -27,12 +27,25 @@
 							<th class="text-center col-md-2">Data de Nascimento</th>
 							<th class="text-right col-md-2">Valor</th>
 							<th class="text-center col-md-2">Status</th>
-							<th class="col-md-1">Ações</th>
+							<th class="text-center col-md-1">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
+						<tr th:each="titulo : ${titulos}">
+							<td class="text-center" th:text="${titulo.codigo}">1</td>
+							<td th:text="${titulo.descricao}">descrição</td>
+							<td class="text-center" th:text="${{titulo.dataVencimento}}">07/08/2018</td>
+							<td class="text-right" th:text="|R$ ${{titulo.valor}}|">R$ 20,00</td>
+							<td class="text-center">
+								<span class="label" th:text="${titulo.status.descricao}"
+								      th:classappend="${titulo.pendente ? 'label-danger' : 'label-success'}"></span>
+							</td>
+							<td class="text-center">
+								
+							</td>
+						</tr>					
 						<tr>
-							<td colspan="6">Nenhum título foi encontrado</td>
+							<td colspan="6" th:if="${#lists.isEmpty(titulos)}">Nenhum título foi encontrado</td>
 						</tr>
 					</tbody>
 		
