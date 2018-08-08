@@ -12,7 +12,9 @@
 	
 		<form class="form-horizontal" method="post" action="/titulos" th:object="${titulo}">
 
-			<div layout:include="mensagem"></div>			
+			<div layout:include="mensagem"></div>	
+			
+			<input type="hidden" th:field="*{codigo}"/>		
 		
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -48,7 +50,8 @@
 						<label for="status" class="col-sm-2 control-label">Status</label>
 						<div class="col-sm-2">
 							<select class="form-control" id="status" name="status">
-								<option th:each="status : ${statusTitulo}" th:value="${status}" th:text="${status.descricao}">Recebido</option>
+								<option th:each="status : ${statusTitulo}" th:value="${status}" 
+										th:field="*{status}" th:text="${status.descricao}">Recebido</option>
 							</select>
 						</div>
 					</div>
