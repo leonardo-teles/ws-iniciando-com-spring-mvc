@@ -12,7 +12,8 @@
 	
 		<form class="form-horizontal" method="post" action="/titulos" th:object="${titulo}">
 
-			<div layout:include="mensagem"></div>	
+			<div layout:include="mensagemSucesso"></div>
+			<div layout:include="mensagemErro"></div>	
 			
 			<input type="hidden" th:field="*{codigo}"/>		
 		
