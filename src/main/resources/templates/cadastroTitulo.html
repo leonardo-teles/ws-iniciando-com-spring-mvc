@@ -10,7 +10,7 @@
 	
 	<section layout:fragment="conteudo">
 	
-		<form class="form-horizontal" method="post" action="/titulos" th:object="${titulo}">
+		<form class="form-horizontal" method="post" th:action="@{/titulos}" th:object="${titulo}">
 
 			<div layout:include="mensagemSucesso"></div>
 			<div layout:include="mensagemErro"></div>	
@@ -21,7 +21,7 @@
 				<div class="panel-heading">
 					<div class="clearfix">
 						<h1 class="panel-title aw-titulo-panel">Novo Título</h1>
-						<a class="btn btn-link aw-link-panel" href="/titulos">Pesquisar Título</a>
+						<a class="btn btn-link aw-link-panel" th:href="@{/titulos}">Pesquisar Título</a>
 					</div>
 				</div>
 	
