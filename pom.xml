@@ -7,7 +7,7 @@
 	<groupId>com.algaworks</groupId>
 	<artifactId>cobranca</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>cobranca</name>
 	<description>Sistema de cobrança do curso inicial de Spring</description>
@@ -44,6 +44,12 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>42.2.5</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 		
 		<dependency>
